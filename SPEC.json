@@ -1,20 +1,20 @@
 {
   "@context": {
-    "@base": "http://github.com/ozekik/markdown-ld/SPEC.md",
+    "@base": "https://github.com/ozekik/markdown-ld/blob/master/SPEC.md",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "ex": "http://example.com/"
   },
   "@graph": [
     {
-      "@id": "http://github.com/ozekik/markdown-ld/SPEC.md#example-entity-foo",
+      "@id": "https://github.com/ozekik/markdown-ld/blob/master/SPEC.md#example-entity-foo",
       "rdf:type": {
         "@id": "rdfs:Resource"
       }
     },
     {
-      "@id": "http://github.com/ozekik/markdown-ld/SPEC.md#example-entity-foo",
-      "http://github.com/ozekik/markdown-ld/SPEC.md#example-predicate-1": [
+      "@id": "https://github.com/ozekik/markdown-ld/blob/master/SPEC.md#example-entity-foo",
+      "https://github.com/ozekik/markdown-ld/blob/master/SPEC.md#example-predicate-1": [
         "Some literal",
         {
           "@value": "Some literal",
@@ -29,7 +29,7 @@
           "@id": "ex:someEntity"
         },
         {
-          "@id": "http://github.com/ozekik/markdown-ld/SPEC.md#example-entity-bar"
+          "@id": "https://github.com/ozekik/markdown-ld/blob/master/SPEC.md#example-entity-bar"
         },
         {
           "ex:name": "Alice"
@@ -37,12 +37,12 @@
       ]
     },
     {
-      "@id": "http://github.com/ozekik/markdown-ld/SPEC.md#example-entity-bar",
-      "http://github.com/ozekik/markdown-ld/SPEC.md#example-predicate-1": "Some literal"
+      "@id": "https://github.com/ozekik/markdown-ld/blob/master/SPEC.md#example-entity-bar",
+      "https://github.com/ozekik/markdown-ld/blob/master/SPEC.md#example-predicate-1": "Some literal"
     },
     {
-      "@id": "http://github.com/ozekik/markdown-ld/SPEC.md#example-entity-bar",
-      "http://github.com/ozekik/markdown-ld/SPEC.md#example-predicate-2": {
+      "@id": "https://github.com/ozekik/markdown-ld/blob/master/SPEC.md#example-entity-bar",
+      "https://github.com/ozekik/markdown-ld/blob/master/SPEC.md#example-predicate-2": {
         "@id": "http://example.com/someEntity"
       }
     }
