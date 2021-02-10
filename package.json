@@ -14,7 +14,7 @@
   "main": "dist/markdownld.js",
   "module": "dist/markdownld.mjs",
   "bin": {
-    "markdown-ld": "bin/cli.js"
+    "markdownld": "bin/cli.js"
   },
   "files": [
     "dist",
@@ -36,6 +36,7 @@
     "@frogcat/ttl2jsonld": "0.0.6",
     "remark-parse": "^9.0.0",
     "unified": "^9.2.0",
+    "unified-args": "^8.1.0",
     "unist-util-find": "^1.0.2",
     "unist-util-find-after": "^3.0.0",
     "unist-util-is": "^4.0.4",
@@ -45,7 +46,6 @@
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.1.1",
-    "rollup-plugin-node-polyfills": "^0.2.1",
-    "unified-args": "^8.1.0"
+    "rollup-plugin-node-polyfills": "^0.2.1"
   }
 }
