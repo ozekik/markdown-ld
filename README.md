@@ -61,7 +61,7 @@ const input =
 const processor = unified().use(markdown).use(markdownld);
 
 processor.process(input, (err, { contents }) => {
-  console.log(contents);
+  console.log(contents);  // <#Alice> foaf:knows <#Bob> .
 });
 ```
 
