@@ -2,7 +2,7 @@
   import remark from 'remark';
   import html from 'remark-html';
   import markdownld from 'markdownld';
-	import example from '../../SPEC.md';
+	import example from '../../examples/foaf.md';
 
   import './Layout.svelte';
 

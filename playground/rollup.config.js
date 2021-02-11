@@ -71,7 +71,7 @@ export default {
     }),
     commonjs(),
     json(),
-    string({ include: '../*.md' }),
+    string({ include: '../examples/*.md' }),
 
     // In dev mode, call `npm run start` once
     // the bundle has been generated
