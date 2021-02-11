@@ -13,6 +13,8 @@ Try it online! <https://ozekik.github.io/markdown-ld/>
 
 See [SPEC.md](SPEC.md), which is compiled into [SPEC.ttl](SPEC.ttl) (Turtle) and [SPEC.json](SPEC.json) (JSON-LD).
 
+For a more realistic example from the FOAF (Friend of a Friend) Vocabulary, see [examples/foaf.md](examples/foaf.md), [examples/foaf.ttl](examples/foaf.ttl) (Turtle), and [examples/foaf.json](examples/foaf.json) (JSON-LD).
+
 ## Markdown-LD Compiler
 
 A referential compiler to Turtle and other RDF formats is implemented as a [unified](https://github.com/unifiedjs/unified)/[remark](https://github.com/remarkjs/remark) plugin and CLI.

@@ -1,0 +1,591 @@
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "vs": "http://www.w3.org/2003/06/sw-vocab-status/ns#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "wot": "http://xmlns.com/wot/0.1/",
+    "dc": "http://purl.org/dc/elements/1.1/"
+  },
+  "@graph": [
+    {
+      "@id": "foaf:",
+      "rdf:type": {
+        "@id": "owl:Ontology"
+      },
+      "dc:title": "Friend of a Friend (FOAF) vocabulary",
+      "dc:description": "The Friend of a Friend (FOAF) RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language."
+    },
+    {
+      "@id": "foaf:Agent",
+      "rdf:type": [
+        {
+          "@id": "rdfs:Class"
+        },
+        {
+          "@id": "owl:Class"
+        }
+      ],
+      "vs:term_status": "stable",
+      "rdfs:label": "Agent",
+      "rdfs:comment": "An agent (eg. person, group, software or physical artifact)."
+    },
+    {
+      "@id": "foaf:Agent",
+      "owl:equivalentClass": {
+        "@id": "http://purl.org/dc/terms/Agent"
+      }
+    },
+    {
+      "@id": "foaf:Person",
+      "rdf:type": [
+        {
+          "@id": "rdfs:Class"
+        },
+        {
+          "@id": "owl:Class"
+        }
+      ],
+      "rdfs:label": "Person",
+      "rdfs:comment": "A person.",
+      "vs:term_status": "stable",
+      "rdfs:isDefinedBy": {
+        "@id": "foaf:"
+      }
+    },
+    {
+      "@id": "foaf:Person",
+      "rdfs:subClassOf": {
+        "@id": "foaf:Agent"
+      }
+    },
+    {
+      "@id": "foaf:Person",
+      "owl:equivalentClass": [
+        {
+          "@id": "http://schema.org/Person"
+        },
+        {
+          "@id": "http://www.w3.org/2000/10/swap/pim/contact#Person"
+        }
+      ]
+    },
+    {
+      "@id": "foaf:Person",
+      "owl:disjointWith": [
+        {
+          "@id": "foaf:Organization"
+        },
+        {
+          "@id": "foaf:Project"
+        }
+      ]
+    },
+    {
+      "@id": "foaf:name",
+      "rdf:type": [
+        {
+          "@id": "rdf:Property"
+        },
+        {
+          "@id": "owl:DatatypeProperty"
+        }
+      ],
+      "vs:term_status": "testing",
+      "rdfs:label": "name",
+      "rdfs:comment": "A name for some thing.",
+      "rdfs:isDefinedBy": {
+        "@id": "foaf:"
+      }
+    },
+    {
+      "@id": "foaf:name",
+      "rdfs:subPropertyOf": {
+        "@id": "rdfs:label"
+      }
+    },
+    {
+      "@id": "foaf:name",
+      "rdfs:domain": {
+        "@id": "owl:Thing"
+      }
+    },
+    {
+      "@id": "foaf:name",
+      "rdfs:range": {
+        "@id": "rdfs:Literal"
+      }
+    },
+    {
+      "@id": "foaf:title",
+      "rdf:type": [
+        {
+          "@id": "rdf:Property"
+        },
+        {
+          "@id": "owl:DatatypeProperty"
+        }
+      ],
+      "vs:term_status": "testing",
+      "rdfs:label": "title",
+      "rdfs:comment": "Title (Mr, Mrs, Ms, Dr. etc)",
+      "rdfs:isDefinedBy": {
+        "@id": "foaf:"
+      }
+    },
+    {
+      "@id": "foaf:img",
+      "rdf:type": [
+        {
+          "@id": "rdf:Property"
+        },
+        {
+          "@id": "owl:ObjectProperty"
+        }
+      ],
+      "vs:term_status": "testing",
+      "rdfs:label": "image",
+      "rdfs:comment": "An image that can be used to represent some thing (ie. those depictions which are particularly representative of something, eg. one's photo on a homepage).",
+      "rdfs:isDefinedBy": {
+        "@id": "foaf:"
+      }
+    },
+    {
+      "@id": "foaf:img",
+      "rdfs:subPropertyOf": {
+        "@id": "foaf:depiction"
+      }
+    },
+    {
+      "@id": "foaf:img",
+      "rdfs:domain": {
+        "@id": "foaf:Person"
+      }
+    },
+    {
+      "@id": "foaf:img",
+      "rdfs:range": {
+        "@id": "foaf:Image"
+      }
+    },
+    {
+      "@id": "foaf:depiction",
+      "rdf:type": [
+        {
+          "@id": "rdf:Property"
+        },
+        {
+          "@id": "owl:ObjectProperty"
+        }
+      ],
+      "vs:term_status": "testing",
+      "rdfs:label": "depiction",
+      "rdfs:comment": "A depiction of some thing.",
+      "rdfs:isDefinedBy": {
+        "@id": "foaf:"
+      }
+    },
+    {
+      "@id": "foaf:depiction",
+      "rdfs:domain": {
+        "@id": "owl:Thing"
+      }
+    },
+    {
+      "@id": "foaf:depiction",
+      "rdfs:range": {
+        "@id": "foaf:Image"
+      }
+    },
+    {
+      "@id": "foaf:depiction",
+      "owl:inverseOf": {
+        "@id": "foaf:depicts"
+      }
+    },
+    {
+      "@id": "foaf:familyName",
+      "rdf:type": [
+        {
+          "@id": "rdf:Property"
+        },
+        {
+          "@id": "owl:DatatypeProperty"
+        }
+      ],
+      "vs:term_status": "testing",
+      "rdfs:label": "familyName",
+      "rdfs:comment": "The family name of some person.",
+      "rdfs:isDefinedBy": {
+        "@id": "foaf:"
+      }
+    },
+    {
+      "@id": "foaf:familyName",
+      "rdfs:domain": {
+        "@id": "foaf:Person"
+      }
+    },
+    {
+      "@id": "foaf:familyName",
+      "rdfs:range": {
+        "@id": "rdfs:Literal"
+      }
+    },
+    {
+      "@id": "foaf:givenName",
+      "rdf:type": [
+        {
+          "@id": "rdf:Property"
+        },
+        {
+          "@id": "owl:DatatypeProperty"
+        }
+      ],
+      "vs:term_status": "testing",
+      "rdfs:label": "Given name",
+      "rdfs:comment": "The given name of some person.",
+      "rdfs:isDefinedBy": {
+        "@id": "foaf:"
+      }
+    },
+    {
+      "@id": "foaf:knows",
+      "rdf:type": [
+        {
+          "@id": "rdf:Property"
+        },
+        {
+          "@id": "owl:ObjectProperty"
+        }
+      ],
+      "vs:term_status": "stable",
+      "rdfs:label": "knows",
+      "rdfs:comment": "A person known by this person (indicating some level of reciprocated interaction between the parties).",
+      "rdfs:isDefinedBy": {
+        "@id": "foaf:"
+      }
+    },
+    {
+      "@id": "foaf:knows",
+      "rdfs:domain": {
+        "@id": "foaf:Person"
+      }
+    },
+    {
+      "@id": "foaf:knows",
+      "rdfs:range": {
+        "@id": "foaf:Person"
+      }
+    },
+    {
+      "@id": "foaf:based_near",
+      "rdf:type": [
+        {
+          "@id": "rdf:Property"
+        },
+        {
+          "@id": "owl:ObjectProperty"
+        }
+      ],
+      "vs:term_status": "testing",
+      "rdfs:label": "based near",
+      "rdfs:comment": "A location that something is based near, for some broadly human notion of near.",
+      "rdfs:isDefinedBy": {
+        "@id": "foaf:"
+      }
+    },
+    {
+      "@id": "foaf:based_near",
+      "rdfs:domain": {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
+      }
+    },
+    {
+      "@id": "foaf:based_near",
+      "rdfs:range": {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"
+      }
+    },
+    {
+      "@id": "foaf:age",
+      "rdf:type": [
+        {
+          "@id": "rdf:Property"
+        },
+        {
+          "@id": "owl:FunctionalProperty"
+        },
+        {
+          "@id": "owl:DatatypeProperty"
+        }
+      ],
+      "vs:term_status": "unstable",
+      "rdfs:label": "age",
+      "rdfs:comment": "The age in years of some agent.",
+      "rdfs:isDefinedBy": {
+        "@id": "foaf:"
+      }
+    },
+    {
+      "@id": "foaf:age",
+      "rdfs:domain": {
+        "@id": "foaf:Agent"
+      }
+    },
+    {
+      "@id": "foaf:age",
+      "rdfs:range": {
+        "@id": "rdfs:Literal"
+      }
+    },
+    {
+      "@id": "foaf:made",
+      "rdf:type": [
+        {
+          "@id": "rdf:Property"
+        },
+        {
+          "@id": "owl:ObjectProperty"
+        }
+      ],
+      "vs:term_status": "stable",
+      "rdfs:label": "made",
+      "rdfs:comment": "Something that was made by this agent.",
+      "rdfs:isDefinedBy": {
+        "@id": "foaf:"
+      }
+    },
+    {
+      "@id": "foaf:made",
+      "rdfs:domain": {
+        "@id": "foaf:Agent"
+      }
+    },
+    {
+      "@id": "foaf:made",
+      "rdfs:range": {
+        "@id": "owl:Thing"
+      }
+    },
+    {
+      "@id": "foaf:made",
+      "owl:inverseOf": {
+        "@id": "foaf:maker"
+      }
+    },
+    {
+      "@id": "foaf:primaryTopic",
+      "rdf:type": [
+        {
+          "@id": "rdf:Property"
+        },
+        {
+          "@id": "owl:FunctionalProperty"
+        },
+        {
+          "@id": "owl:ObjectProperty"
+        }
+      ],
+      "vs:term_status": "stable",
+      "rdfs:label": "primary topic",
+      "rdfs:comment": "The primary topic of some page or document.",
+      "rdfs:isDefinedBy": {
+        "@id": "foaf:"
+      }
+    },
+    {
+      "@id": "foaf:primaryTopic",
+      "rdfs:domain": {
+        "@id": "foaf:Document"
+      }
+    },
+    {
+      "@id": "foaf:primaryTopic",
+      "rdfs:range": {
+        "@id": "owl:Thing"
+      }
+    },
+    {
+      "@id": "foaf:primaryTopic",
+      "owl:inverseOf": {
+        "@id": "foaf:isPrimaryTopicOf"
+      }
+    },
+    {
+      "@id": "foaf:Project",
+      "rdf:type": [
+        {
+          "@id": "rdfs:Class"
+        },
+        {
+          "@id": "owl:Class"
+        }
+      ],
+      "vs:term_status": "testing",
+      "rdfs:label": "Project",
+      "rdfs:comment": "A project (a collective endeavour of some kind).",
+      "rdfs:isDefinedBy": {
+        "@id": "foaf:"
+      }
+    },
+    {
+      "@id": "foaf:Project",
+      "owl:disjointWith": [
+        {
+          "@id": "foaf:Person"
+        },
+        {
+          "@id": "foaf:Document"
+        }
+      ]
+    },
+    {
+      "@id": "foaf:Organization",
+      "rdf:type": [
+        {
+          "@id": "rdfs:Class"
+        },
+        {
+          "@id": "owl:Class"
+        }
+      ],
+      "rdfs:label": "Organization",
+      "rdfs:comment": "An organization.",
+      "vs:term_status": "stable",
+      "rdfs:isDefinedBy": {
+        "@id": "foaf:"
+      }
+    },
+    {
+      "@id": "foaf:Organization",
+      "rdfs:subClassOf": {
+        "@id": "foaf:Agent"
+      }
+    },
+    {
+      "@id": "foaf:Organization",
+      "owl:disjointWith": [
+        {
+          "@id": "foaf:Person"
+        },
+        {
+          "@id": "foaf:Document"
+        }
+      ]
+    },
+    {
+      "@id": "foaf:Group",
+      "rdf:type": [
+        {
+          "@id": "rdfs:Class"
+        },
+        {
+          "@id": "owl:Class"
+        }
+      ],
+      "vs:term_status": "stable",
+      "rdfs:label": "Group",
+      "rdfs:comment": "A class of Agents."
+    },
+    {
+      "@id": "foaf:Group",
+      "rdfs:subClassOf": {
+        "@id": "foaf:Agent"
+      }
+    },
+    {
+      "@id": "foaf:member",
+      "rdf:type": [
+        {
+          "@id": "rdf:Property"
+        },
+        {
+          "@id": "owl:ObjectProperty"
+        }
+      ],
+      "vs:term_status": "stable",
+      "rdfs:label": "member",
+      "rdfs:comment": "Indicates a member of a Group",
+      "rdfs:isDefinedBy": {
+        "@id": "foaf:"
+      }
+    },
+    {
+      "@id": "foaf:member",
+      "rdfs:domain": {
+        "@id": "foaf:Group"
+      }
+    },
+    {
+      "@id": "foaf:member",
+      "rdfs:range": {
+        "@id": "foaf:Agent"
+      }
+    },
+    {
+      "@id": "foaf:Document",
+      "rdf:type": [
+        {
+          "@id": "rdfs:Class"
+        },
+        {
+          "@id": "owl:Class"
+        }
+      ],
+      "rdfs:label": "Document",
+      "rdfs:comment": "A document.",
+      "vs:term_status": "stable",
+      "rdfs:isDefinedBy": {
+        "@id": "foaf:"
+      }
+    },
+    {
+      "@id": "foaf:Document",
+      "owl:equivalentClass": {
+        "@id": "http://schema.org/CreativeWork"
+      }
+    },
+    {
+      "@id": "foaf:Document",
+      "owl:disjointWith": [
+        {
+          "@id": "foaf:Organization"
+        },
+        {
+          "@id": "foaf:Project"
+        }
+      ]
+    },
+    {
+      "@id": "foaf:Image",
+      "rdf:type": [
+        {
+          "@id": "rdfs:Class"
+        },
+        {
+          "@id": "owl:Class"
+        }
+      ],
+      "vs:term_status": "stable",
+      "rdfs:label": "Image",
+      "rdfs:comment": "An image.",
+      "rdfs:isDefinedBy": {
+        "@id": "foaf:"
+      }
+    },
+    {
+      "@id": "foaf:Image",
+      "rdfs:subClassOf": {
+        "@id": "foaf:Document"
+      }
+    },
+    {
+      "@id": "foaf:Image",
+      "owl:equivalentClass": {
+        "@id": "http://schema.org/ImageObject"
+      }
+    }
+  ]
+}

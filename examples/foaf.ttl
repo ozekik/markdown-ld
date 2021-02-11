@@ -1,0 +1,168 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix vs:  <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix wot:  <http://xmlns.com/wot/0.1/> .
+@prefix dc:  <http://purl.org/dc/elements/1.1/> .
+
+foaf:   rdf:type        owl:Ontology ;
+        dc:title        "Friend of a Friend (FOAF) vocabulary" ;
+        dc:description  "The Friend of a Friend (FOAF) RDF vocabulary, described using W3C RDF Schema and the Web Ontology Language." .
+
+foaf:Agent  rdf:type         rdfs:Class ;
+        vs:term_status       "stable" ;
+        rdfs:label           "Agent" ;
+        rdfs:comment         "An agent (eg. person, group, software or physical artifact)." ;
+        rdf:type             owl:Class .
+foaf:Agent owl:equivalentClass <http://purl.org/dc/terms/Agent> .
+foaf:Person  rdf:type        rdfs:Class ;
+        rdfs:label           "Person" ;
+        rdfs:comment         "A person." ;
+        vs:term_status       "stable" ;
+        rdf:type             owl:Class ;
+        rdfs:isDefinedBy     foaf: .
+foaf:Person rdfs:subClassOf foaf:Agent .
+foaf:Person owl:equivalentClass <http://schema.org/Person>,
+                                <http://www.w3.org/2000/10/swap/pim/contact#Person> .
+foaf:Person owl:disjointWith foaf:Organization,
+                             foaf:Project .
+foaf:name  rdf:type         rdf:Property ;
+        vs:term_status      "testing" ;
+        rdfs:label          "name" ;
+        rdfs:comment        "A name for some thing." ;
+        rdf:type            owl:DatatypeProperty ;
+        rdfs:isDefinedBy    foaf: .
+foaf:name rdfs:subPropertyOf rdfs:label .
+foaf:name rdfs:domain owl:Thing .
+foaf:name rdfs:range rdfs:Literal .
+foaf:title  rdf:type      rdf:Property ;
+        vs:term_status    "testing" ;
+        rdfs:label        "title" ;
+        rdfs:comment      "Title (Mr, Mrs, Ms, Dr. etc)" ;
+        rdf:type          owl:DatatypeProperty ;
+        rdfs:isDefinedBy  foaf: .
+foaf:img  rdf:type          rdf:Property ;
+        vs:term_status      "testing" ;
+        rdfs:label          "image" ;
+        rdfs:comment        "An image that can be used to represent some thing (ie. those depictions which are particularly representative of something, eg. one's photo on a homepage)." ;
+        rdf:type            owl:ObjectProperty ;
+        rdfs:isDefinedBy    foaf: .
+foaf:img rdfs:subPropertyOf foaf:depiction .
+foaf:img rdfs:domain foaf:Person .
+foaf:img rdfs:range foaf:Image .
+foaf:depiction  rdf:type  rdf:Property ;
+        vs:term_status    "testing" ;
+        rdfs:label        "depiction" ;
+        rdfs:comment      "A depiction of some thing." ;
+        rdf:type          owl:ObjectProperty ;
+        rdfs:isDefinedBy  foaf: .
+foaf:depiction rdfs:domain owl:Thing .
+foaf:depiction rdfs:range foaf:Image .
+foaf:depiction owl:inverseOf foaf:depicts .
+foaf:familyName  rdf:type  rdf:Property ;
+        vs:term_status    "testing" ;
+        rdfs:label        "familyName" ;
+        rdfs:comment      "The family name of some person." ;
+        rdf:type          owl:DatatypeProperty ;
+        rdfs:isDefinedBy  foaf: .
+foaf:familyName rdfs:domain foaf:Person .
+foaf:familyName rdfs:range rdfs:Literal .
+foaf:givenName  rdf:type  rdf:Property ;
+        vs:term_status    "testing" ;
+        rdfs:label        "Given name" ;
+        rdfs:comment      "The given name of some person." ;
+        rdf:type          owl:DatatypeProperty ;
+        rdfs:isDefinedBy  foaf: .
+foaf:knows  rdf:type      rdf:Property ;
+        vs:term_status    "stable" ;
+        rdfs:label        "knows" ;
+        rdfs:comment      "A person known by this person (indicating some level of reciprocated interaction between the parties)." ;
+        rdf:type          owl:ObjectProperty ;
+        rdfs:isDefinedBy  foaf: .
+foaf:knows rdfs:domain foaf:Person .
+foaf:knows rdfs:range foaf:Person .
+foaf:based_near  rdf:type  rdf:Property ;
+        vs:term_status    "testing" ;
+        rdfs:label        "based near" ;
+        rdfs:comment      "A location that something is based near, for some broadly human notion of near." ;
+        rdf:type          owl:ObjectProperty ;
+        rdfs:isDefinedBy  foaf: .
+foaf:based_near rdfs:domain <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+foaf:based_near rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+foaf:age  rdf:type        rdf:Property ;
+        vs:term_status    "unstable" ;
+        rdfs:label        "age" ;
+        rdfs:comment      "The age in years of some agent." ;
+        rdf:type          owl:FunctionalProperty ;
+        rdf:type          owl:DatatypeProperty ;
+        rdfs:isDefinedBy  foaf: .
+foaf:age rdfs:domain foaf:Agent .
+foaf:age rdfs:range rdfs:Literal .
+foaf:made  rdf:type       rdf:Property ;
+        vs:term_status    "stable" ;
+        rdfs:label        "made" ;
+        rdfs:comment      "Something that was made by this agent." ;
+        rdf:type          owl:ObjectProperty ;
+        rdfs:isDefinedBy  foaf: .
+foaf:made rdfs:domain foaf:Agent .
+foaf:made rdfs:range owl:Thing .
+foaf:made owl:inverseOf foaf:maker .
+foaf:primaryTopic  rdf:type  rdf:Property ;
+        vs:term_status    "stable" ;
+        rdfs:label        "primary topic" ;
+        rdfs:comment      "The primary topic of some page or document." ;
+        rdf:type          owl:FunctionalProperty ;
+        rdf:type          owl:ObjectProperty ;
+        rdfs:isDefinedBy  foaf: .
+foaf:primaryTopic rdfs:domain foaf:Document .
+foaf:primaryTopic rdfs:range owl:Thing .
+foaf:primaryTopic owl:inverseOf foaf:isPrimaryTopicOf .
+foaf:Project  rdf:type    rdfs:Class ;
+        vs:term_status    "testing" ;
+        rdfs:label        "Project" ;
+        rdfs:comment      "A project (a collective endeavour of some kind)." ;
+        rdf:type          owl:Class ;
+        rdfs:isDefinedBy  foaf: .
+foaf:Project owl:disjointWith foaf:Person,
+                              foaf:Document .
+foaf:Organization  rdf:type  rdfs:Class ;
+        rdfs:label        "Organization" ;
+        rdfs:comment      "An organization." ;
+        vs:term_status    "stable" ;
+        rdf:type          owl:Class ;
+        rdfs:isDefinedBy  foaf: .
+foaf:Organization rdfs:subClassOf foaf:Agent .
+foaf:Organization owl:disjointWith foaf:Person,
+                                   foaf:Document .
+foaf:Group  rdf:type     rdfs:Class ;
+        vs:term_status   "stable" ;
+        rdfs:label       "Group" ;
+        rdfs:comment     "A class of Agents." ;
+        rdf:type         owl:Class .
+foaf:Group rdfs:subClassOf foaf:Agent .
+foaf:member  rdf:type     rdf:Property ;
+        vs:term_status    "stable" ;
+        rdfs:label        "member" ;
+        rdfs:comment      "Indicates a member of a Group" ;
+        rdf:type          owl:ObjectProperty ;
+        rdfs:isDefinedBy  foaf: .
+foaf:member rdfs:domain foaf:Group .
+foaf:member rdfs:range foaf:Agent .
+foaf:Document  rdf:type      rdfs:Class ;
+        rdfs:label           "Document" ;
+        rdfs:comment         "A document." ;
+        vs:term_status       "stable" ;
+        rdf:type             owl:Class ;
+        rdfs:isDefinedBy     foaf: .
+foaf:Document owl:equivalentClass <http://schema.org/CreativeWork> .
+foaf:Document owl:disjointWith foaf:Organization,
+                               foaf:Project .
+foaf:Image  rdf:type         rdfs:Class ;
+        vs:term_status       "stable" ;
+        rdfs:label           "Image" ;
+        rdfs:comment         "An image." ;
+        rdf:type             owl:Class ;
+        rdfs:isDefinedBy  foaf: .
+foaf:Image rdfs:subClassOf foaf:Document .
+foaf:Image owl:equivalentClass <http://schema.org/ImageObject> .
