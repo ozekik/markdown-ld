@@ -20,6 +20,28 @@ The Friend of a Friend (FOAF) RDF vocabulary, described using W3C RDF Schema and
 
 [The original specification](http://xmlns.com/foaf/spec/) is licensed under [CC BY-1.0](http://creativecommons.org/licenses/by/1.0/).
 
+#### Contents
+
+- [Agent](#agent)
+- [Person](#person)
+- [name](#name)
+- [title](#title)
+- [img](#img)
+- [depiction](#depiction)
+- [family name](#family-name)
+- [given name](#given-name)
+- [knows](#knows)
+- [based near](#based-near)
+- [age](#age)
+- [made](#made)
+- [primary topic](#primary-topic)
+- [Project](#project)
+- [Organization](#organization)
+- [Group](#group)
+- [member](#member)
+- [Document](#document)
+- [Image](#image)
+
 ## Agent
 
 `foaf:Agent`
