@@ -7,7 +7,7 @@ It is a kind of [literate programming](https://en.wikipedia.org/wiki/Literate_pr
 
 ## Playground
 
-TBA
+Try it online! <https://ozekik.github.io/markdown-ld/>
 
 ## Specification and Examples
 
@@ -67,7 +67,7 @@ processor.process(input, (err, { contents }) => {
 
 ## Todo
 
-- [ ] Publish playground
+- [x] Publish playground
 - [ ] Make TriG default
 - [ ] Do input validation for better exception messages
 - [ ] Support compilation to more RDF formats
