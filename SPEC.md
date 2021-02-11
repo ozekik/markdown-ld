@@ -1,4 +1,3 @@
-
 # Markdown-LD
 
 `<https://github.com/ozekik/markdown-ld/blob/master/SPEC.md>`
