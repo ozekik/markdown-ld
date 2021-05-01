@@ -21,5 +21,5 @@ start({
   packageField: name + 'Config',
   rcName: '.' + name + 'rc',
   ignoreName: '.' + name + 'ignore',
-  plugins: ['../dist/xxx'],
+  plugins: [],
 });
