@@ -14,7 +14,7 @@
   "main": "dist/markdownld.js",
   "module": "dist/markdownld.mjs",
   "bin": {
-    "markdownld": "bin/cli.js"
+    "markdownld": "bin/cli.mjs"
   },
   "files": [
     "dist",
@@ -34,13 +34,13 @@
   },
   "dependencies": {
     "@frogcat/ttl2jsonld": "0.0.9",
-    "remark-parse": "^9.0.0",
-    "unified": "^9.2.2",
-    "unified-args": "^8.1.0",
-    "unist-util-find": "^1.0.4",
-    "unist-util-find-after": "^3.0.0",
-    "unist-util-is": "^4.1.0",
-    "unist-util-visit": "^2.0.3"
+    "remark-parse": "^11.0.0",
+    "unified": "^11.0.4",
+    "unified-args": "^11.0.1",
+    "unist-util-find": "^3.0.0",
+    "unist-util-find-after": "^5.0.0",
+    "unist-util-is": "^6.0.0",
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
