@@ -10,7 +10,7 @@
   "homepage": "https://github.com/ozekik/markdown-ld",
   "repository": "https://github.com/ozekik/markdown-ld",
   "license": "MIT",
-  "author": "Kentaro Ozeki <kentaro.ozeki+npm@gmail.com>",
+  "author": "Kentaro Ozeki <kentaro.ozeki+dev@gmail.com>",
   "main": "dist/markdownld.js",
   "module": "dist/markdownld.mjs",
   "bin": {
