@@ -33,7 +33,7 @@
     "prepack": "npm run build"
   },
   "dependencies": {
-    "@frogcat/ttl2jsonld": "0.0.6",
+    "@frogcat/ttl2jsonld": "0.0.9",
     "remark-parse": "^9.0.0",
     "unified": "^9.2.2",
     "unified-args": "^8.1.0",

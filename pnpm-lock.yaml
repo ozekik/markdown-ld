@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@frogcat/ttl2jsonld':
-    specifier: 0.0.6
-    version: 0.0.6
+    specifier: 0.0.9
+    version: 0.0.9
   remark-parse:
     specifier: ^9.0.0
     version: 9.0.0
@@ -72,8 +72,8 @@ packages:
       picocolors: 1.0.0
     dev: false
 
-  /@frogcat/ttl2jsonld@0.0.6:
-    resolution: {integrity: sha512-KwZDRYfrYKtRS35OniszIwZWuuvqkXocpSXU7KQ/7fF2OLoe2Zg8oXQidgw/4xLgRuzoQIELcOgvWXk2W2f8Lg==}
+  /@frogcat/ttl2jsonld@0.0.9:
+    resolution: {integrity: sha512-oT3Abc9sEnwcCx9cTgRCTbz+Y/9fvbqfW22A5V4ChoQ8/P++2eAvlWgUghFoNm2V9U3/CCDSP9HTGJ51D+n1Uw==}
     hasBin: true
     dev: false
 
